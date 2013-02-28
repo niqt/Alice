@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=alice
+Icon=icon-launcher-gallery
+Exec=invoker --type=j -s /opt/sdk/bin/alice
+Comment=Sailfish UI application
+
+
