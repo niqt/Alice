@@ -140,26 +140,27 @@ QString Percentile::getFemaleWeight(QDateTime birthday, double measure)
 {
     QString a;
     a = "Unknown";
-    fprintf(stdout, "data %s\n", birthday.toString("dd.MM.yyyy").toStdString().c_str());
-    fflush(stdout);
+
+    qDebug() << "IN getFemaleWeight "  << endl;
+
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (femaleMapWeight13Week == NULL)
-            femaleMapWeight13Week = new PercentileMap("app/native/assets/tab_wfa_girls_p_0_13.txt", this);
+            femaleMapWeight13Week = new PercentileMap(":/data/tab_wfa_girls_p_0_13.txt", this);
         Interval percentile = femaleMapWeight13Week->find(nweek, measure);
 
         a = intervalString(percentile);
 
     }else {
         int nmonth = month(birthday.date());
-        fprintf(stdout, "month %d\n", nmonth);
-        fflush(stdout);
+
         if (nmonth >= 0 && nmonth <= 60) {
             if (femaleMapWeight5Year == NULL)
-                femaleMapWeight5Year = new PercentileMap("app/native/assets/tab_wfa_girls_p_0_5.txt", this);
+                femaleMapWeight5Year = new PercentileMap(":/data/tab_wfa_girls_p_0_5.txt", this);
             Interval percentile = femaleMapWeight5Year->find(nmonth, measure);
-            fprintf(stdout, "percentile %d", percentile);
-                        fflush(stdout);
+
+            qDebug() << "PErcemtila " << percentile << endl;
+
             a = intervalString(percentile);
         }
     }
@@ -174,7 +175,7 @@ QString Percentile::getFemaleHeight(QDateTime birthday, double measure)
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (femaleMapHeight13Week == NULL)
-            femaleMapHeight13Week = new PercentileMap("app/native/assets/tab_lhfa_girls_p_0_13.txt", this);
+            femaleMapHeight13Week = new PercentileMap(":/data/tab_lhfa_girls_p_0_13.txt", this);
         Interval percentile = femaleMapHeight13Week->find(nweek, measure);
 
         a = intervalString(percentile);
@@ -182,7 +183,7 @@ QString Percentile::getFemaleHeight(QDateTime birthday, double measure)
         int nmonth = month(birthday.date());
         if (nmonth < 25) {
             if (femaleMapHeight2Year == NULL)
-                femaleMapHeight2Year = new PercentileMap("app/native/assets/tab_lhfa_girls_p_0_2.txt", this);
+                femaleMapHeight2Year = new PercentileMap(":/data/tab_lhfa_girls_p_0_2.txt", this);
             Interval percentile = femaleMapHeight2Year->find(nmonth, measure);
             fprintf(stdout, "percentile %d", percentile);
             fflush(stdout);
@@ -190,7 +191,7 @@ QString Percentile::getFemaleHeight(QDateTime birthday, double measure)
             a = intervalString(percentile);
         } else if (nmonth >= 25 && nmonth <= 60) {
             if (femaleMapHeight5Year == NULL)
-                femaleMapHeight5Year = new PercentileMap("app/native/assets/tab_lhfa_girls_p_2_5.txt", this);
+                femaleMapHeight5Year = new PercentileMap(":/data/tab_lhfa_girls_p_2_5.txt", this);
             Interval percentile = femaleMapHeight5Year->find(nmonth, measure);
             a = intervalString(percentile);
         }
@@ -206,7 +207,7 @@ QString Percentile::getFemaleHead(QDateTime birthday, double measure)
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (femaleMapHead13Week == NULL)
-            femaleMapHead13Week = new PercentileMap("app/native/assets/tab_hcfa_girls_p_0_13.txt", this);
+            femaleMapHead13Week = new PercentileMap(":/data/tab_hcfa_girls_p_0_13.txt", this);
         Interval percentile = femaleMapHead13Week->find(nweek, measure);
 
         a = intervalString(percentile);
@@ -215,7 +216,7 @@ QString Percentile::getFemaleHead(QDateTime birthday, double measure)
         if (nmonth >= 0 && nmonth <= 60) {
 
             if (femaleMapHead5Year == NULL)
-                femaleMapHead5Year = new PercentileMap("app/native/assets/tab_hcfa_girls_p_0_5.txt", this);
+                femaleMapHead5Year = new PercentileMap(":/data/tab_hcfa_girls_p_0_5.txt", this);
             Interval percentile = femaleMapHead5Year->find(nmonth, measure);
             a = intervalString(percentile);
         }
@@ -231,7 +232,7 @@ QString Percentile::getMaleWeight(QDateTime birthday, double measure)
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (maleMapWeight13Week == NULL)
-            maleMapWeight13Week = new PercentileMap("app/native/assets/tab_wfa_boys_p_0_13.txt", this);
+            maleMapWeight13Week = new PercentileMap(":/data/tab_wfa_boys_p_0_13.txt", this);
         Interval percentile = maleMapWeight13Week->find(nweek, measure);
 
         a = intervalString(percentile);
@@ -239,7 +240,7 @@ QString Percentile::getMaleWeight(QDateTime birthday, double measure)
         int nmonth = month(birthday.date());
         if (nmonth >= 0 && nmonth <= 60) {
             if (maleMapWeight5Year == NULL)
-                maleMapWeight5Year = new PercentileMap("app/native/assets/tab_wfa_boys_p_0_5.txt", this);
+                maleMapWeight5Year = new PercentileMap(":/data/tab_wfa_boys_p_0_5.txt", this);
             Interval percentile = maleMapWeight5Year->find(nmonth, measure);
             a = intervalString(percentile);
         }
@@ -255,7 +256,7 @@ QString Percentile::getMaleHeight(QDateTime birthday, double measure)
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (maleMapHeight13Week == NULL)
-            maleMapHeight13Week = new PercentileMap("app/native/assets/tab_lhfa_boys_p_0_13.txt", this);
+            maleMapHeight13Week = new PercentileMap(":/tab_lhfa_boys_p_0_13.txt", this);
         Interval percentile = maleMapHeight13Week->find(nweek, measure);
 
         a = intervalString(percentile);
@@ -263,12 +264,12 @@ QString Percentile::getMaleHeight(QDateTime birthday, double measure)
         int nmonth = month(birthday.date());
         if (nmonth < 25) {
             if (maleMapHeight2Year == NULL)
-                maleMapHeight2Year = new PercentileMap("app/native/assets/tab_lhfa_boys_p_0_2.txt", this);
+                maleMapHeight2Year = new PercentileMap(":/tab_lhfa_boys_p_0_2.txt", this);
             Interval percentile = maleMapHeight2Year->find(nmonth, measure);
             a = intervalString(percentile);
         } else if (nmonth >= 25 && nmonth <= 60) {
             if (maleMapHeight5Year == NULL)
-                maleMapHeight5Year = new PercentileMap("app/native/assets/tab_lhfa_boys_p_2_5.txt", this);
+                maleMapHeight5Year = new PercentileMap(":/tab_lhfa_boys_p_2_5.txt", this);
             Interval percentile = maleMapHeight5Year->find(nmonth, measure);
             a = intervalString(percentile);
         }
@@ -284,7 +285,7 @@ QString Percentile::getMaleHead(QDateTime birthday, double measure)
     if (isweekMinorOf13(birthday.date())) {
         int nweek = week(birthday.date());
         if (maleMapHead13Week == NULL)
-            maleMapHead13Week = new PercentileMap("app/native/assets/tab_hcfa_boys_p_0_13.txt", this);
+            maleMapHead13Week = new PercentileMap(":/tab_hcfa_boys_p_0_13.txt", this);
         Interval percentile = maleMapHead13Week->find(nweek, measure);
 
         a = intervalString(percentile);
@@ -293,7 +294,7 @@ QString Percentile::getMaleHead(QDateTime birthday, double measure)
         if (nmonth >= 0 && nmonth <= 60) {
 
             if (maleMapHead5Year == NULL)
-                maleMapHead5Year = new PercentileMap("app/native/assets/tab_hcfa_boys_p_0_5.txt", this);
+                maleMapHead5Year = new PercentileMap(":/tab_hcfa_boys_p_0_5.txt", this);
             Interval percentile = maleMapHead5Year->find(nmonth, measure);
             a = intervalString(percentile);
         }

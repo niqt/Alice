@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
+    property date birthday: new Date()
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -29,7 +30,7 @@ Page {
             }
 
             Button {
-                id: button
+                id: birthdayButton
                 x: theme.paddingLarge
                 text: "Birthday: "
                 onClicked: {
@@ -41,14 +42,27 @@ Page {
                                 })
 
                     dialog.accepted.connect(function () {
-                        button.text = "Birthday: " + dialog.dateText
+                        birthdayButton.text = "Birthday: " + dialog.dateText
+                        birthday = dialog.date;
                     })
                 }
             }
 
+            ComboBox {
+                id: groupSex
+                 width: 480
+                 label: "Sex: "
+
+                 menu: ContextMenu {
+                     MenuItem { text: "Male" }
+                     MenuItem { text: "Female" }
+                 }
+             }
+
             TextField {
-                placeholderText: "Weight"
+                placeholderText: "Current Weight (Kg)"
                 width: 480
+                id: weightEdit
                 x: theme.paddingLarge
                 validator: DoubleValidator {
                     bottom: 1
@@ -60,7 +74,8 @@ Page {
                 }
             }
             TextField {
-                placeholderText: "Height"
+                placeholderText: "Current Height (cm)"
+                id: heightEdit
                 x: theme.paddingLarge
                 width: 480
                 onTextChanged: {
@@ -68,11 +83,12 @@ Page {
                 }
                 validator: DoubleValidator {
                     bottom: 1
-                    top: 30
+                    top: 100
                 }
             }
             TextField {
-                placeholderText: "Head circumference"
+                id: headEdit
+                placeholderText: "Current Head circumference (cm)"
                 width: 480
                 x: theme.paddingLarge
                 onTextChanged: {
@@ -80,7 +96,7 @@ Page {
                 }
                 validator: DoubleValidator {
                     bottom: 1
-                    top: 30
+                    top: 100
                 }
             }
             Button {
@@ -88,10 +104,30 @@ Page {
                //enabled: false
                x: theme.paddingLarge
                onClicked: {
+                   var weightp = "Not available";
+                   var heightp = "Not available";
+                   var headp = "Not available";
+                   if (groupSex.currentIndex === 1) {
+
+                       if (weightEdit.text.length > 0)
+                           weightp = logic.getFemaleWeight(birthday, weightEdit.text);
+                       if (heightEdit.text.length > 0)
+                           heightp = logic.getFemaleHeight(birthday, heightEdit.text);
+                       if (headEdit.text.length > 0)
+                           headp = logic.getFemaleHead(birthday, headEdit.text);
+                   } else {
+
+                       if (weightEdit.text.length > 0)
+                           weightp = logic.getMaleWeight(birthday, weightEdit.text);
+                       if (heightEdit.text.length > 0)
+                           heightp = logic.getMaleHeight(birthday, heightEdit.text);
+                       if (headEdit.text.length > 0)
+                           headp = logic.getMaleHead(birthday, headEdit.text);
+                   }
                    var page = Qt.resolvedUrl("Result.qml");
                    page.ageNumber = 2;
-                   pageStack.push(page, {ageNumber:"2", weightPercentile: "32"})
-                   console.log("clicked! ");
+                   pageStack.push(page, {ageNumber: logic.getAge(birthday), weightPercentile: weightp, heightPercentile: heightp, headPercentile: headp})
+                   console.log("clicked! " + weightp + " " + weightEdit.text);
                }
             }
         }

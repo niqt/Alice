@@ -17,18 +17,26 @@ Page {
         Label {
             id: age
             text: "Age: " + ageNumber
+            font.pixelSize: theme.fontSizeSmall
+            font.family: theme.fontFamily
         }
         Label {
             id: weightp
             text: "Weight: " + weightPercentile
+            font.pixelSize: theme.fontSizeSmall
+            font.family: theme.fontFamily
         }
         Label {
             id: heightp
-            text: "Height:" + heightPercentile
+            text: "Height: " + heightPercentile
+            font.pixelSize: theme.fontSizeSmall
+            font.family: theme.fontFamily
         }
         Label {
             id: headp
             text: "Head circumference: " + headPercentile;
+            font.pixelSize: theme.fontSizeSmall
+            font.family: theme.fontFamily
         }
     }
 }

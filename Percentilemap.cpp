@@ -16,8 +16,7 @@ PercentileMap::PercentileMap(QString filename, QObject *parent) :
 {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    	fprintf(stdout, "File not found\n");
-    	fflush(stdout);
+
         qDebug() << "File not found\n";
             return;
     }
@@ -26,10 +25,7 @@ PercentileMap::PercentileMap(QString filename, QObject *parent) :
         line = file.readLine();
         QString sline = QString::fromUtf8(line.data());
         QStringList list = sline.split(QRegExp("\\s+"));
-        for (int i = 0; i < list.length(); i++) {
-            qDebug() << "*" << list.at(i) << "* ";
 
-        }
         if (list.length() >= 19) {
             Row dum;
 
@@ -63,35 +59,35 @@ Interval PercentileMap::find(int age, double misure)
         Row row = i.value();
         if (misure < row.p0)
             return _P0;
-        if (misure < row.p1)
+        if (misure >= row.p0 && misure < row.p1)
             return P0_P1;
-        if (misure < row.p3)
+        if (misure >= row.p1 && misure < row.p3)
             return P1_P3;
-        if (misure < row.p5)
+        if (misure >= row.p3 && misure < row.p5)
             return P3_P5;
-        if (misure < row.p10)
+        if (misure >= row.p5 && misure < row.p10)
             return P5_P10;
-        if (misure < row.p15)
+        if (misure >= row.p10 && misure < row.p15)
             return P10_P15;
-        if (misure < row.p25)
+        if (misure >= row.p15 && misure < row.p25)
             return P15_P25;
-        if (misure < row.p50)
+        if (misure >= row.p25 && misure < row.p50)
             return P25_P50;
-        if (misure < row.p75)
+        if (misure >= row.p50 && misure < row.p75)
             return P50_P75;
-        if (misure < row.p85)
+        if (misure >= row.p75 && misure < row.p85)
             return P75_P85;
-        if (misure < row.p90)
+        if (misure >= row.p85 && misure < row.p90)
             return P85_P90;
-        if (misure < row.p95)
+        if (misure >= row.p90 && misure < row.p95)
             return P90_P95;
-        if (misure < row.p97)
+        if (misure >= row.p95 && misure < row.p97)
             return P95_P97;
-        if (misure < row.p99)
+        if (misure >= row.p97 && misure < row.p99)
             return P97_P99;
-        if (misure < row.p999)
+        if (misure >= row.p99 && misure < row.p999)
             return P99_P999;
-        if (misure > row.p999)
+        if (misure >= row.p0 && misure > row.p999)
             return P999_;
     }
     return P_UNKNOWN;

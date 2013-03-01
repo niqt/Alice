@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by Qt Creator 2.6.2, 2013-02-28T16:17:29. -->
+<!-- Written by Qt Creator 2.6.2, 2013-03-01T13:00:50. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -179,10 +179,17 @@
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
       <value type="QByteArray" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
+       <value type="QString">/home/nicola/src/Alice/alice.desktop</value>
+       <value type="QString">/home/nicola/src/Alice/pages/AboutPage.qml</value>
+       <value type="QString">/home/nicola/src/Alice/cover/CoverPage.qml</value>
+       <value type="QString">/home/nicola/src/Alice/main.qml</value>
+       <value type="QString">/home/nicola/src/Alice/pages/Result.qml</value>
        <value type="QString">/home/nicola/src/alice/alice</value>
        <value type="QString">/home/nicola/src/alice/pages/Result.qml</value>
        <value type="QString">/home/nicola/src/alice/pages/SecondPage.qml</value>
+       <value type="QString">/home/nicola/src/Alice/pages/FirstPage.qml</value>
        <value type="QString">/home/nicola/src/alice/pages/AboutPage.qml</value>
+       <value type="QString">/home/nicola/src/Alice/alice</value>
        <value type="QString">/home/nicola/src/alice/main.qml</value>
        <value type="QString">/home/nicola/src/alice/cover/CoverPage.qml</value>
        <value type="QString">/home/nicola/src/alice/pages/FirstPage.qml</value>
@@ -197,12 +204,26 @@
        <value type="QString">localhost</value>
        <value type="QString">localhost</value>
        <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
+       <value type="QString">localhost</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedRemotePaths">
+       <value type="QString">/opt/sdk/share/applications</value>
+       <value type="QString">/opt/sdk/share/alice/pages</value>
+       <value type="QString">/opt/sdk/share/alice/cover</value>
+       <value type="QString">/opt/sdk/share/alice</value>
+       <value type="QString">/opt/sdk/share/alice/pages</value>
        <value type="QString">/opt/sdk/bin</value>
        <value type="QString">/opt/sdk/share/alice/pages</value>
        <value type="QString">/opt/sdk/share/alice/pages</value>
        <value type="QString">/opt/sdk/share/alice/pages</value>
+       <value type="QString">/opt/sdk/share/alice/pages</value>
+       <value type="QString">/opt/sdk/bin</value>
        <value type="QString">/opt/sdk/share/alice</value>
        <value type="QString">/opt/sdk/share/alice/cover</value>
        <value type="QString">/opt/sdk/share/alice/pages</value>
@@ -217,12 +238,26 @@
        <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
        <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
        <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
+       <value type="QString">/home/nicola/SailfishOS/mersdk/targets/SailfishOS-i486-x86</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
+       <value type="QDateTime">2013-03-01T09:14:59</value>
+       <value type="QDateTime">2013-03-01T09:14:59</value>
+       <value type="QDateTime">2013-03-01T09:14:59</value>
+       <value type="QDateTime">2013-03-01T09:14:59</value>
+       <value type="QDateTime">2013-03-01T12:57:18</value>
        <value type="QDateTime">2013-02-28T14:20:38</value>
        <value type="QDateTime">2013-02-28T16:12:00</value>
        <value type="QDateTime">2013-02-28T14:20:38</value>
+       <value type="QDateTime">2013-03-01T12:57:18</value>
        <value type="QDateTime">2013-02-28T16:16:10</value>
+       <value type="QDateTime">2013-03-01T12:53:46</value>
        <value type="QDateTime">2013-02-28T14:20:39</value>
        <value type="QDateTime">2013-02-28T14:20:39</value>
        <value type="QDateTime">2013-02-28T16:12:00</value>
@@ -323,7 +358,7 @@
     </valuelist>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">alice (on Remote Device)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QByteArray" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MerRunConfiguration:/home/nicola/src/alice/alice.pro</value>
+    <value type="QByteArray" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.MerRunConfiguration:/home/nicola/src/Alice/alice.pro</value>
     <value type="QString" key="Qt4ProjectManager.MaemoRunConfiguration.Arguments"></value>
     <value type="int" key="Qt4ProjectManager.MaemoRunConfiguration.BaseEnvironmentBase">1</value>
     <value type="QString" key="Qt4ProjectManager.MaemoRunConfiguration.ProFile">alice.pro</value>

@@ -2,10 +2,14 @@
 TARGET = alice
 
 # C++ sources
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    Percentile.cpp \
+    Percentilemap.cpp
 
 # C++ headers
-HEADERS +=
+HEADERS += \
+    Percentilemap.h \
+    Percentile.h
 
 # QML files and folders
 qml.files = *.qml pages cover main.qml
@@ -18,4 +22,7 @@ include(sailfishapplication/sailfishapplication.pri)
 
 OTHER_FILES = rpm/alice.yaml \
     pages/AboutPage.qml
+
+RESOURCES += \
+    percentile.qrc
 

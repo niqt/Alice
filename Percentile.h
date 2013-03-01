@@ -12,7 +12,7 @@
 #include <QObject>
 #include <QDate>
 #include <QString>
-#include "percentilemap.h"
+#include "Percentilemap.h"
 
 class Percentile : public QObject
 {

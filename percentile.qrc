@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>data/tab_hcfa_boys_p_0_5.txt</file>
+        <file>data/tab_wfa_girls_p_0_13.txt</file>
+        <file>data/tab_hcfa_boys_p_0_13.txt</file>
+        <file>data/tab_hcfa_girls_p_0_5.txt</file>
+        <file>data/tab_hcfa_girls_p_0_13.txt</file>
+        <file>data/tab_lhfa_boys_p_0_2.txt</file>
+        <file>data/tab_lhfa_boys_p_0_13.txt</file>
+        <file>data/tab_lhfa_boys_p_2_5.txt</file>
+        <file>data/tab_lhfa_girls_p_0_2.txt</file>
+        <file>data/tab_lhfa_girls_p_0_13.txt</file>
+        <file>data/tab_lhfa_girls_p_2_5.txt</file>
+        <file>data/tab_wfa_boys_p_0_5.txt</file>
+        <file>data/tab_wfa_boys_p_0_13.txt</file>
+        <file>data/tab_wfa_girls_p_0_5.txt</file>
+    </qresource>
+</RCC>
